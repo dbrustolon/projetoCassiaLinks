@@ -26,19 +26,7 @@
 
 body {
   background: var(--bg-url) no-repeat top center/cover;
- 
-}
-
-body {
-  /*
-  background: url(./assets/bg-mobile.jpg);
-  background-repeat: no-repeat;
-  background-position: top center;
-  background-size: cover;
-*/
-
-  /* background: color image repeat position/size -->Shorthand<-- */
-  /* background: url(./assets/bg-mobile.jpg) no-repeat top center/cover;*/
+  height: 100vh;
 }
 
 body * {
@@ -64,14 +52,12 @@ body * {
   border-radius: 9999px;
 }
 #profile p {
-  font-size: 16px;
   font-weight: 500;
   line-height: 24px;
   margin-top: 8px;
   border-radius: 9999px;
 }
 /* switch */
-
 #switch {
   position: relative;
   width: 64px;
@@ -86,26 +72,30 @@ body * {
   border-radius: 50%;
 
   position: absolute;
+  top: 50%;
   left: 0;
   z-index: 1;
   transform: translateY(-50%);
-  top: 50%;
+  animation: slide-back 0.2s;
+}
+
+#switch button:hover {
+  outline: 8px solid var(--highlight-color);
 }
 
 .light #switch button {
-  right: 0;
-  left: initial;
+  animation: slide-in 0.2s forwards;
 }
 
 #switch span {
   display: block;
   width: 64px;
   height: 24px;
-  border-radius: 9999px;
   background: var(--surface-color);
   border: 1px solid var(--stroke-color);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
+  border-radius: 9999px;
 }
 
 /* links */
@@ -129,12 +119,11 @@ ul li a {
   -webkit-backdrop-filter: blur(4px);
   text-decoration: none;
   font-weight: 500;
-  transition: background;
-  transition-duration: 0.2s;
-}
+  transition: background 0.2s;
+ }
 /* pseudo-selector -> sudo-selector*/
 ul li a:hover {
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--surface-color-hover);
   border: 1.5px solid var(--text-color);
 }
 
@@ -152,7 +141,7 @@ ul li a:hover {
   justify-content: center;
   padding: 16px;
   border-radius: 50%;
-  transition: background 0.3s;
+  transition: background 0.2s;
 }
 
 #social-links a:hover {
@@ -160,10 +149,38 @@ ul li a:hover {
 }
 
 footer {
-  padding: 5px 0;
+  padding: 24px 0;
   text-align: center;
   font-size: 14px;
   background: rgba(255, 255, 255, 0.05);
   border-radius: 8px;
   text-decoration: none;
+}
+
+/* media queries */
+
+@media (min-width: 700px) {
+  :root {
+    --bg-url: url(./assets/bg-large-dark.jpg);
+  }
+
+  .light {
+    --bg-url: url(./assets/bg-light.jpg);
+  }
+}
+@keyframes slide-in {
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+@keyframes slide-back {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0;
+  }
 }
