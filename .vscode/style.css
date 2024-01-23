@@ -1,3 +1,4 @@
+/* 
 * {
   margin: 0;
   padding: 0;
@@ -41,7 +42,7 @@ body * {
   padding: 0 24px;
 }
 
-/* profile */
+/* profile *//*
 #profile {
   text-align: center;
   padding: 24px;
@@ -57,7 +58,7 @@ body * {
   margin-top: 8px;
   border-radius: 9999px;
 }
-/* switch */
+/* switch *//*
 #switch {
   position: relative;
   width: 64px;
@@ -98,7 +99,7 @@ body * {
   border-radius: 9999px;
 }
 
-/* links */
+/* links *//*
 ul {
   list-style: none;
   display: flex;
@@ -121,13 +122,13 @@ ul li a {
   font-weight: 500;
   transition: background 0.2s;
  }
-/* pseudo-selector -> sudo-selector*/
+/* pseudo-selector -> sudo-selector*//*
 ul li a:hover {
   background: var(--surface-color-hover);
   border: 1.5px solid var(--text-color);
 }
 
-/* social links */
+/* social links *//*
 #social-links {
   display: flex;
   padding: 24px;
@@ -157,7 +158,7 @@ footer {
   text-decoration: none;
 }
 
-/* media queries */
+/* media queries *//*
 
 @media (min-width: 700px) {
   :root {
@@ -184,3 +185,4 @@ footer {
     left: 0;
   }
 }
+*/
