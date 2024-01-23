@@ -130,7 +130,7 @@ ul li a:hover {
 /* social links */
 #social-links {
   display: flex;
-  padding: 24px;
+  padding: 24px 0;
   font-size: 24px;
   justify-content: center;
 }
